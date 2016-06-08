@@ -1,0 +1,4 @@
+export HADOOP_PREFIX=$HOME/programs/hadoop-1.0.4
+export PATH=$PATH:$HADOOP_PREFIX/bin
+export HBASE_HOME=$HOME/programs/hbase-0.94.17
+export PATH=$PATH:$HBASE_HOME/bin
