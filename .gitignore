@@ -1,0 +1,8 @@
+# Fish universal variables (machine-specific, set interactively)
+.config/fish/fish_variables
+
+# Neovim runtime/cache (managed by lazy.nvim)
+.config/nvim/.git/
+
+# OS junk
+.DS_Store
