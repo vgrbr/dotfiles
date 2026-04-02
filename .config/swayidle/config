@@ -1,0 +1,11 @@
+# Swayidle configuration for screen dimming/turning off
+# Timeouts are in seconds
+
+# Turn off screen after 10 minutes of inactivity
+timeout 600 'niri msg output * off' resume 'niri msg output * on'
+
+# Optional: Lock screen before turning off (uncomment if you want to add a lock)
+# timeout 540 'niri msg action do-screen-transition' resume ''
+
+# Optional: Suspend after longer idle (uncomment if desired)
+# timeout 1800 'systemctl suspend' resume ''

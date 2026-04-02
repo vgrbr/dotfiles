@@ -2,3 +2,5 @@
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Miscellaneous#spawn-sh-at-startup
 
     spawn-sh-at-startup "qs -c noctalia-shell"
+    spawn-at-startup "keyd-application-mapper" "-d"
+    spawn-at-startup "/home/vlado/.config/swayidle/start.sh"

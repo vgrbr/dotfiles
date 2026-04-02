@@ -1,0 +1,11 @@
+# keyd handles Super+C/V → Ctrl+Shift+C/V for all terminal apps
+# see ~/.config/keyd/app.conf
+# This ensures paste works consistently in OpenCode, Claude, etc.
+
+# Ghostty's default Ctrl+Shift+C/V will handle clipboard operations
+# No need for explicit Super+C/V keybinds here - keyd handles the remapping
+
+copy-on-select = clipboard
+
+# Pass Super+S through to apps (e.g. Neovim save)
+keybind = super+s=text:\x1b[115;9u

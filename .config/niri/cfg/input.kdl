@@ -24,5 +24,6 @@ input {
     }
 
     focus-follows-mouse // Automatically focus windows under the mouse pointer
+    warp-mouse-to-focus // Warp mouse to center of focused window on keyboard navigation
     workspace-auto-back-and-forth // Enable workspace back & forth switching
 }

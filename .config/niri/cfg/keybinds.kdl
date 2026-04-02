@@ -9,9 +9,10 @@ binds {
     Mod+Shift+ESCAPE                     { show-hotkey-overlay; }
 
     // ─── Applications ───
-    Mod+Return                          hotkey-overlay-title="Open Terminal: Alacritty" { spawn "alacritty"; }
+    Mod+Return                          hotkey-overlay-title="Open Terminal: Ghostty" { spawn "ghostty"; }
+    Mod+Space                           hotkey-overlay-title="Open App Launcher: noctalia launcher" { spawn-sh "qs -c noctalia-shell ipc call launcher toggle"; }
     Mod+CTRL+Return                     hotkey-overlay-title="Open App Launcher: noctalia launcher" { spawn-sh "qs -c noctalia-shell ipc call launcher toggle"; }
-    Mod+B                               hotkey-overlay-title="Open Browser: firefox" { spawn "firefox"; }
+    Mod+B                               hotkey-overlay-title="Open Browser: Chrome" { spawn "chromium"; }
     Mod+ALT+L                           hotkey-overlay-title="Lock Screen: noctalia lock" { spawn-sh "qs -c noctalia-shell ipc call lockScreen lock"; }
     Mod+Shift+Q                        hotkey-overlay-title="Session Menu: noctalia sessionMenu" { spawn-sh "qs -c noctalia-shell ipc call sessionMenu toggle"; }
 
@@ -108,7 +109,7 @@ binds {
 
     // ─── Layout Controls ───
     Mod+CTRL+F                          { expand-column-to-available-width; }
-    Mod+C                               { center-column; }
+    Mod+Shift+C                         { center-column; }
     Mod+CTRL+C                          { center-visible-columns; }
     Mod+Minus                           { set-column-width "-10%"; }
     Mod+Equal                           { set-column-width "+10%"; }
@@ -116,7 +117,7 @@ binds {
     Mod+Shift+Equal                     { set-window-height "+10%"; }
 
     // ─── Modes ───
-    Mod+T                               { toggle-window-floating; }
+    Mod+Shift+T                         { toggle-window-floating; }
     Mod+F                               { fullscreen-window; }
     Mod+W                               { toggle-column-tabbed-display; }
 
