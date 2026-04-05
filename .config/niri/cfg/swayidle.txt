@@ -1,1 +1,0 @@
-    spawn-at-startup "/home/vlado/.config/swayidle/start.sh"

@@ -1,0 +1,12 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=ZapZap
+Comment=Open ZapZap
+Exec=flatpak run com.rtosta.zapzap
+Icon=com.rtosta.zapzap
+Terminal=false
+Categories=Network;InstantMessaging;Chat;
+Keywords=zapzap;zipzap;whatsapp;chat;messaging;flatpak;
+StartupNotify=true
+X-Flatpak=com.rtosta.zapzap

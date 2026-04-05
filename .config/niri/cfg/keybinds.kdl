@@ -14,6 +14,7 @@ binds {
     Mod+CTRL+Return                     hotkey-overlay-title="Open App Launcher: noctalia launcher" { spawn-sh "qs -c noctalia-shell ipc call launcher toggle"; }
     Mod+B                               hotkey-overlay-title="Open Browser: Chrome" { spawn "chromium"; }
     Mod+ALT+L                           hotkey-overlay-title="Lock Screen: noctalia lock" { spawn-sh "qs -c noctalia-shell ipc call lockScreen lock"; }
+    Mod+Shift+L                         hotkey-overlay-title="Lock Screen + Power Off Monitors" { spawn "/home/vlado/dotfiles/.config/niri/bin/lock-and-power-off.sh"; }
     Mod+Shift+Q                        hotkey-overlay-title="Session Menu: noctalia sessionMenu" { spawn-sh "qs -c noctalia-shell ipc call sessionMenu toggle"; }
 
     // Please choose your own file manager.
@@ -72,8 +73,10 @@ binds {
     // ─── Workspace Switching ───
     Mod+WheelScrollDown                 cooldown-ms=150 { focus-workspace-down; }
     Mod+WheelScrollUp                   cooldown-ms=150 { focus-workspace-up; }
-    Mod+CTRL+WheelScrollDown            cooldown-ms=150 { move-column-to-workspace-down; }
-    Mod+CTRL+WheelScrollUp              cooldown-ms=150 { move-column-to-workspace-up; }
+    CTRL+WheelScrollDown                hotkey-overlay-title="Zoom: wooz" cooldown-ms=150 { spawn-sh "pgrep -x wooz >/dev/null || /home/vlado/projects/wooz/build/wooz --zoom-in 25% --mouse-track"; }
+    CTRL+WheelScrollUp                  hotkey-overlay-title="Zoom: wooz" cooldown-ms=150 { spawn-sh "pgrep -x wooz >/dev/null || /home/vlado/projects/wooz/build/wooz --zoom-in 25% --mouse-track"; }
+    ALT+WheelScrollDown                 hotkey-overlay-title="Zoom: wooz" cooldown-ms=150 { spawn-sh "pgrep -x wooz >/dev/null || /home/vlado/projects/wooz/build/wooz --zoom-in 25% --mouse-track"; }
+    ALT+WheelScrollUp                   hotkey-overlay-title="Zoom: wooz" cooldown-ms=150 { spawn-sh "pgrep -x wooz >/dev/null || /home/vlado/projects/wooz/build/wooz --zoom-in 25% --mouse-track"; }
 
     Mod+WheelScrollRight                { focus-column-right; }
     Mod+WheelScrollLeft                 { focus-column-left; }

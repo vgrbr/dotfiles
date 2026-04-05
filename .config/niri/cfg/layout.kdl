@@ -13,7 +13,7 @@
         struts {}
         
         focus-ring {
-          width 4
+          width 2
           active-color "#cba6f7"
           inactive-color "#505050"
         }
@@ -23,7 +23,7 @@
           // If you enable the border, you probably want to disable the focus ring.
           off
 
-          width 4
+          width 3
           active-color "#ffc87f"
           inactive-color "#505050"
           urgent-color "#9b0000"

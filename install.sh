@@ -3,6 +3,7 @@ set -euo pipefail
 
 DOTFILES="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 CONFIG="$HOME/.config"
+LOCAL_SHARE="$HOME/.local/share"
 
 symlink() {
     local src="$1"
@@ -49,6 +50,10 @@ symlink "$DOTFILES/.config/fish/config.fish" "$CONFIG/fish/config.fish"
 symlink "$DOTFILES/.config/fish/conf.d" "$CONFIG/fish/conf.d"
 symlink "$DOTFILES/.config/fish/functions" "$CONFIG/fish/functions"
 symlink "$DOTFILES/.config/fish/completions" "$CONFIG/fish/completions"
+
+echo "[applications]"
+symlink "$DOTFILES/.local/share/applications/com.rtosta.zapzap.desktop" "$LOCAL_SHARE/applications/com.rtosta.zapzap.desktop"
+symlink "$DOTFILES/.local/share/applications/com.viber.Viber.desktop" "$LOCAL_SHARE/applications/com.viber.Viber.desktop"
 
 echo
 echo "Done. Reload your shell or restart apps to apply changes."
