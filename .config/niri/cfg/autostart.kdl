@@ -3,5 +3,5 @@
 
     spawn-sh-at-startup "qs -c noctalia-shell"
     spawn-at-startup "keyd-application-mapper" "-d"
-    spawn-at-startup "/home/vlado/dotfiles/.config/niri/bin/wooz-hold-listener.sh"
-    spawn-at-startup "/home/vlado/.config/swayidle/start.sh"
+    spawn-sh-at-startup "\"$HOME\"/dotfiles/.config/niri/bin/wooz-hold-listener.sh"
+    spawn-sh-at-startup "\"$HOME\"/.config/swayidle/start.sh"

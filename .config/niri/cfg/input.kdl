@@ -17,13 +17,14 @@ input {
     }
 
     mouse {
+        natural-scroll // Enable natural (macOS-style) scrolling
         // If you want to disable Mouse Acceleration,
         // uncomment the lines below.
         //accel-profile "flat"
         //accel-speed 0.0
     }
 
-    focus-follows-mouse // Automatically focus windows under the mouse pointer
+    // focus-follows-mouse // Disabled: only change focus on click or keyboard navigation
     warp-mouse-to-focus // Warp mouse to center of focused window on keyboard navigation
     workspace-auto-back-and-forth // Enable workspace back & forth switching
 }

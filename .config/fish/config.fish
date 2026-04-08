@@ -14,5 +14,5 @@ abbr -a uvmanage 'uv run manage.py'
 abbr -a nx 'nix develop --command fish'
 
 # opencode
-fish_add_path /home/vlado/.opencode/bin
+fish_add_path $HOME/.opencode/bin
 direnv hook fish | source
