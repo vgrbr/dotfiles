@@ -9,10 +9,22 @@ binds {
     Mod+Shift+ESCAPE                     { show-hotkey-overlay; }
 
     // ─── Applications ───
-    Mod+Return                          hotkey-overlay-title="Open Terminal: Ghostty" { spawn "ghostty"; }
+    // Pattern for app-switch.sh:
+    // Mod+Key = focus existing window on this workspace, cycle if multiple, spawn if none
+    // Mod+Shift+Key = cycle matching windows globally across workspaces
+    // Mod+N = open a new window for the currently focused managed app
+    // Mod+CTRL+Key = direct per-app "always open new" fallback
+    Mod+Return                          hotkey-overlay-title="Focus/Cycle Terminal: Ghostty" { spawn-sh "\"$HOME\"/dotfiles/.config/niri/bin/app-switch.sh local '^com\\.mitchellh\\.ghostty$' ghostty"; }
+    Mod+Shift+Return                    hotkey-overlay-title="Cycle Terminal Globally: Ghostty" { spawn-sh "\"$HOME\"/dotfiles/.config/niri/bin/app-switch.sh global '^com\\.mitchellh\\.ghostty$' ghostty"; }
+    Mod+CTRL+Return                     hotkey-overlay-title="Open New Terminal: Ghostty" { spawn-sh "\"$HOME\"/dotfiles/.config/niri/bin/app-switch.sh new '^com\\.mitchellh\\.ghostty$' ghostty"; }
+    Mod+N                               hotkey-overlay-title="Open New Window For Focused Managed App" { spawn-sh "\"$HOME\"/dotfiles/.config/niri/bin/managed-app-new.sh"; }
     Mod+Space                           hotkey-overlay-title="Open App Launcher: noctalia launcher" { spawn-sh "qs -c noctalia-shell ipc call launcher toggle"; }
-    Mod+CTRL+Return                     hotkey-overlay-title="Open App Launcher: noctalia launcher" { spawn-sh "qs -c noctalia-shell ipc call launcher toggle"; }
-    Mod+B                               hotkey-overlay-title="Open Browser: Chrome" { spawn "chromium"; }
+    Mod+B                               hotkey-overlay-title="Focus/Cycle Browser: Helium" { spawn-sh "\"$HOME\"/dotfiles/.config/niri/bin/app-switch.sh local '^(helium|Helium|helium-browser|Helium-browser)$' helium-browser"; }
+    Mod+Shift+B                         hotkey-overlay-title="Cycle Browser Globally: Helium" { spawn-sh "\"$HOME\"/dotfiles/.config/niri/bin/app-switch.sh global '^(helium|Helium|helium-browser|Helium-browser)$' helium-browser"; }
+    Mod+CTRL+B                          hotkey-overlay-title="Open New Browser: Helium" { spawn-sh "\"$HOME\"/dotfiles/.config/niri/bin/app-switch.sh new '^(helium|Helium|helium-browser|Helium-browser)$' helium-browser"; }
+    Mod+S                               hotkey-overlay-title="Focus/Cycle Notes: Simplenote" { spawn-sh "\"$HOME\"/dotfiles/.config/niri/bin/app-switch.sh local '^chrome-gmgnghphiockcigbjihhdnnmmcbdcjdf-Profile_1$' chromium \"--profile-directory=Profile 1\" --app-id=gmgnghphiockcigbjihhdnnmmcbdcjdf"; }
+    Mod+Shift+S                         hotkey-overlay-title="Cycle Notes Globally: Simplenote" { spawn-sh "\"$HOME\"/dotfiles/.config/niri/bin/app-switch.sh global '^chrome-gmgnghphiockcigbjihhdnnmmcbdcjdf-Profile_1$' chromium \"--profile-directory=Profile 1\" --app-id=gmgnghphiockcigbjihhdnnmmcbdcjdf"; }
+    Mod+CTRL+S                          hotkey-overlay-title="Open New Notes: Simplenote" { spawn-sh "\"$HOME\"/dotfiles/.config/niri/bin/app-switch.sh new '^chrome-gmgnghphiockcigbjihhdnnmmcbdcjdf-Profile_1$' chromium \"--profile-directory=Profile 1\" --app-id=gmgnghphiockcigbjihhdnnmmcbdcjdf"; }
     Mod+ALT+L                           hotkey-overlay-title="Lock Screen: noctalia lock" { spawn-sh "qs -c noctalia-shell ipc call lockScreen lock"; }
     Mod+Shift+L                         hotkey-overlay-title="Lock Screen + Power Off Monitors" { spawn-sh "\"$HOME\"/dotfiles/.config/niri/bin/lock-and-power-off.sh"; }
     Mod+Shift+Q                        hotkey-overlay-title="Session Menu: noctalia sessionMenu" { spawn-sh "qs -c noctalia-shell ipc call sessionMenu toggle"; }
@@ -122,7 +134,7 @@ binds {
     // ─── Modes ───
     Mod+Shift+T                         { toggle-window-floating; }
     Mod+F                               { fullscreen-window; }
-    Mod+W                               { toggle-column-tabbed-display; }
+    Mod+CTRL+W                          { toggle-column-tabbed-display; }
 
     // ─── Screenshots ───
     CTRL+Shift+1                        { screenshot; }

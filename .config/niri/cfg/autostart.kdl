@@ -2,6 +2,6 @@
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Miscellaneous#spawn-sh-at-startup
 
     spawn-sh-at-startup "qs -c noctalia-shell"
-    spawn-at-startup "keyd-application-mapper" "-d"
+    spawn-sh-at-startup "niri msg event-stream | python3 \"$HOME\"/dotfiles/.config/niri/bin/keyd-app-bindings.py"
     spawn-sh-at-startup "\"$HOME\"/dotfiles/.config/niri/bin/wooz-hold-listener.sh"
     spawn-sh-at-startup "\"$HOME\"/.config/swayidle/start.sh"

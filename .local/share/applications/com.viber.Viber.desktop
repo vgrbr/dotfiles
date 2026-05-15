@@ -3,11 +3,10 @@ Version=1.0
 Type=Application
 Name=Viber
 Comment=Open Viber
-Exec=flatpak run com.viber.Viber
+Exec=flatpak run --env=QT_QPA_PLATFORM=xcb com.viber.Viber
 Icon=com.viber.Viber
 Terminal=false
 Categories=Network;InstantMessaging;Chat;
 Keywords=viber;chat;messaging;voip;flatpak;
 StartupNotify=true
 X-Flatpak=com.viber.Viber
-QT_QPA_PLATFORM=xcb

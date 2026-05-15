@@ -33,6 +33,9 @@ symlink "$DOTFILES/.config/niri" "$CONFIG/niri"
 echo "[ghostty]"
 symlink "$DOTFILES/.config/ghostty" "$CONFIG/ghostty"
 
+echo "[fontconfig]"
+symlink "$DOTFILES/.config/fontconfig" "$CONFIG/fontconfig"
+
 echo "[nvim]"
 symlink "$DOTFILES/.config/nvim" "$CONFIG/nvim"
 
@@ -40,10 +43,17 @@ echo "[keyd]"
 if command -v keyd &>/dev/null; then
     echo "  symlinking keyd configs to /etc/keyd/ (needs sudo)"
     sudo ln -sf "$DOTFILES/keyd/default.conf" /etc/keyd/default.conf
-    sudo ln -sf "$DOTFILES/keyd/app.conf" /etc/keyd/app.conf
     sudo systemctl restart keyd
-    symlink "$DOTFILES/.config/keyd/app.conf" "$CONFIG/keyd/app.conf"
+    mkdir -p "$CONFIG/keyd"
+    ln -sfn "$DOTFILES/.config/keyd/app.conf" "$CONFIG/keyd/app.conf"
+    echo "  linked: $CONFIG/keyd/app.conf"
 fi
+
+echo "[tmux]"
+symlink "$DOTFILES/.tmux.conf" "$HOME/.tmux.conf"
+
+echo "[sesh]"
+symlink "$DOTFILES/.config/sesh/sesh.toml" "$CONFIG/sesh/sesh.toml"
 
 echo "[fish]"
 symlink "$DOTFILES/.config/fish/config.fish" "$CONFIG/fish/config.fish"

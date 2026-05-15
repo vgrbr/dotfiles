@@ -5,7 +5,19 @@
 # Ghostty's default Ctrl+Shift+C/V will handle clipboard operations
 # No need for explicit Super+C/V keybinds here - keyd handles the remapping
 
+# Theme - Catppuccin Latte (light pastel theme)
+theme = Catppuccin Latte
+
+font-family = "JetBrainsMono Nerd Font"
+font-style = Regular
+font-size = 15
+
 copy-on-select = clipboard
 
 # Pass Super+S through to apps (e.g. Neovim save)
 keybind = super+s=text:\x1b[115;9u
+
+# Tab management
+# keyd remaps Super+T/W → Ctrl+Shift+T/W (compositor intercepts bare Super)
+keybind = ctrl+shift+t=new_tab
+keybind = ctrl+shift+w=close_surface
